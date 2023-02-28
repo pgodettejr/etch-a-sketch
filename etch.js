@@ -12,6 +12,14 @@ function makeRows(rows, cols) {
 
 makeRows(16, 16);
 
+// Learn CSS grid?
+
+/* Need either a separate function, possibly with a for loop, to create the hover
+effect or code within the existing makeRows function to make it work. mouseenter 
+& mouseleave addEventListener likely no matter which method. That or mousemove & 
+mouseout. Not sure .forEach works because the grid isn't split up into individual 
+buttons or divs. There is no "hover" method for event listeners. */
+
 /* Really bad code that I would've needed 256 more divs to work. Also it crashes.
 
 Need one giant grid square split into 4 squares evenly (2 x 2; 4 divs)
@@ -206,12 +214,3 @@ giantBox.style.border = "5px solid black";
 // giantBox.appendChild(hugeBox4);
 
 container.appendChild(giantBox); */
-
-// Do we need to make every single div 16 times?
-/* Is there a way to shorten the code using math & a function to 
-create the grid for us?*/
-
-/* Worst case: one div with four divs inside it & each of those divs
-have four divs inside those until we get to 16 x 16 */
-
-// Learn CSS grid?
