@@ -5,7 +5,7 @@ function makeRows(rows, cols) {
   container.style.setProperty('--grid-cols', cols);
   for (c = 0; c < (rows * cols); c++) {
     let cell = document.createElement("div");
-    cell.innerText = (c + 1);
+    // cell.innerText = (c + 1);
     container.appendChild(cell).className = "grid-item";
   };  
 };
@@ -18,7 +18,16 @@ makeRows(16, 16);
 effect or code within the existing makeRows function to make it work. mouseenter 
 & mouseleave addEventListener likely no matter which method. That or mousemove & 
 mouseout. Not sure .forEach works because the grid isn't split up into individual 
-buttons or divs. There is no "hover" method for event listeners. */
+buttons or divs UNLESS it's under the for loop for the makeRows function? (e.g: 
+cells.forEach(cell) if cells is set as a querySelectorAll('???')). There is no 
+"hover" method for event listeners.
+
+Use this as a foundation and modify it to work with the grid that has no buttons?
+
+const btn3 = document.querySelector('#btn3');
+btn3.addEventListener('click', function(e) {
+  e.target.style.background = 'blue';
+}); */
 
 /* Really bad code that I would've needed 256 more divs to work. Also it crashes.
 
