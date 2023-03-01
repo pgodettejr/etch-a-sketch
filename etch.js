@@ -17,10 +17,12 @@ makeRows(16, 16);
 /* Need either a separate function, possibly with a for loop, to create the hover
 effect or code within the existing makeRows function to make it work. mouseenter 
 & mouseleave addEventListener likely no matter which method. That or mousemove & 
-mouseout. Not sure .forEach works because the grid isn't split up into individual 
-buttons or divs UNLESS it's under the for loop for the makeRows function? (e.g: 
-cells.forEach(cell) if cells is set as a querySelectorAll('???')). There is no 
-"hover" method for event listeners.
+mouseout. Even mousedown is an option and may be the best option (user may not like 
+drawn trail just for hovering the mouse over the grid - less control). Not 
+sure .forEach works because the grid isn't split up into individual buttons or divs 
+UNLESS it's under the for loop for the makeRows function? (e.g: cells.forEach(cell) 
+if cells is set as a querySelectorAll('???')). There is no "hover" method for event 
+listeners.
 
 Use this as a foundation and modify it to work with the grid that has no buttons?
 
