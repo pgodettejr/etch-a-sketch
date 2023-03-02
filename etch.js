@@ -16,8 +16,6 @@ makeRows(16, 16);
 
 // Learn CSS grid?
 
-// We should try keydown instead of onmousemove to see what happens :)
-
 /* Need either a separate function, possibly with a for loop, to create the hover
 effect or code within the existing makeRows function to make it work (might need to 
 go under the for loop since the cell divs only get created under there - not global 
