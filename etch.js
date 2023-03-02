@@ -5,7 +5,9 @@ function makeRows(rows, cols) {
   container.style.setProperty('--grid-cols', cols);
   for (c = 0; c < (rows * cols); c++) {
     let cell = document.createElement("div");
-    // cell.innerText = (c + 1);
+    cell.onmousemove = e => {
+      e.target.style.background = 'black';
+    };
     container.appendChild(cell).className = "grid-item";
   };  
 };
@@ -14,21 +16,60 @@ makeRows(16, 16);
 
 // Learn CSS grid?
 
+// We should try keydown instead of onmousemove to see what happens :)
+
 /* Need either a separate function, possibly with a for loop, to create the hover
-effect or code within the existing makeRows function to make it work. mouseenter 
-& mouseleave addEventListener likely no matter which method. That or mousemove & 
-mouseout. Even mousedown is an option and may be the best option (user may not like 
-drawn trail just for hovering the mouse over the grid - less control). Not 
-sure .forEach works because the grid isn't split up into individual buttons or divs 
-UNLESS it's under the for loop for the makeRows function? (e.g: cells.forEach(cell) 
-if cells is set as a querySelectorAll('???')). There is no "hover" method for event 
-listeners.
+effect or code within the existing makeRows function to make it work (might need to 
+go under the for loop since the cell divs only get created under there - not global 
+scope). 
+
+Options are:  
+
+mousedown (gives user more control over drawn trail, isn't a true "drag" effect)
+container.onmousemove = e => {}
+
+container.onmousemove = makeRows => {} turns the furthest outer cells black but then 
+the entire grid goes black if the mouse travels any farther inward. Simply changing 
+mousedown to onmousemove on current addEventListener doesn't do anything.
+
+Not sure .forEach works because the grid isn't split up into individual buttons or 
+divs UNLESS it's under the for loop for the makeRows function? (e.g: cells.forEach(cell) 
+if const cells = document.querySelectorAll('cell')). There is no "hover" method for 
+event listeners.
+
+mouseenter + mouseleave addEventListener don't work (entire grid changes color)
+ondrag doesn't work either (only hand icon for mouse shows up)
+
+mousemove + mouseout gives off an interesting effect. Occasionally entire grid flashes 
+black except for the area you moused over earlier which remains white. No cell stays 
+black however.
 
 Use this as a foundation and modify it to work with the grid that has no buttons?
 
 const btn3 = document.querySelector('#btn3');
 btn3.addEventListener('click', function(e) {
   e.target.style.background = 'blue';
+}); 
+
+Answer was this:
+
+cell.onmousemove = e => {
+  e.target.style.background = 'black';
+};
+
+Placed under makeRows function */
+
+
+/* Old code
+
+cell.innerText = (c + 1); - was under makeRows function. Numbered all cells.
+
+This kinda worked but didn't drag throughout the cells via long press. 
+Had to click the cells one by one. Also turned the entire grid black if you 
+mouse click fast enough.
+
+container.addEventListener ('mousedown', makeRows => {
+    makeRows.target.style.background = 'black';
 }); */
 
 /* Really bad code that I would've needed 256 more divs to work. Also it crashes.
