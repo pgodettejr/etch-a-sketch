@@ -16,6 +16,20 @@ makeRows(16, 16);
 
 // Learn CSS grid?
 
+// The Mouse Trailer with Smart Features (Hyperplexed)?
+
+// Button Starting Point
+
+/* const btn = document.querySelector('#btn');
+btn.addEventListener('click', function(?) {
+  const ? = makeRows();  
+  let ? = prompt("Enter the number of squares you'd like").onlyTakesIntegersMax100();
+  return?
+  if()
+  return?
+  OR something else that calls makeRows once the # is entered
+}); */
+
 /* Need either a separate function, possibly with a for loop, to create the hover
 effect or code within the existing makeRows function to make it work (might need to 
 go under the for loop since the cell divs only get created under there - not global 
@@ -55,7 +69,9 @@ cell.onmousemove = e => {
   e.target.style.background = 'black';
 };
 
-Placed under makeRows function */
+Placed under makeRows function
+
+Then TOP tells me max width of grid should be 960px regardless of grid size AFTER the fact :) */
 
 
 /* Old code
