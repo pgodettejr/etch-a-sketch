@@ -20,15 +20,22 @@ makeRows(16, 16);
 
 // Button Starting Point
 
-/* const btn = document.querySelector('#btn');
-btn.addEventListener('click', function(?) {
-  const ? = makeRows();  
-  let ? = prompt("Enter the number of squares you'd like").onlyTakesIntegersMax100();
-  return?
-  if()
-  return?
-  OR something else that calls makeRows once the # is entered
-}); */
+const btn = document.querySelector('#btn');
+
+btn.addEventListener('click', function(input) {
+  const gridBox = makeRows();  
+  let popup = Number(prompt("Enter the number of squares you'd like", ""));
+
+  if(input.value < 1) {
+    input.value = 1;
+    return gridBox
+  } else if(input.value > 100) {
+    input.value = 100;
+    return gridBox
+  } else {
+    return gridBox
+  }
+});
 
 /* Need either a separate function, possibly with a for loop, to create the hover
 effect or code within the existing makeRows function to make it work (might need to 

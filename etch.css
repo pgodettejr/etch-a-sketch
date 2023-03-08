@@ -5,10 +5,16 @@
 
   body {
     display: flex;
-    /* flex-direction: column; */
+    flex-direction: column;
     font-family: Roboto, sans-serif;
     justify-content: center;
     align-items: center;
+  }
+
+  #btn {
+    margin: 75px;
+    padding: 15px 45px 15px;
+    font-size: 48px;
   }
 
   #container {
@@ -18,6 +24,7 @@
     grid-template-columns: repeat(var(--grid-cols), 1fr);
     width: 75%;
     height: 75%;
+    max-width: 960px;
   }
 
   .grid-item {
@@ -26,10 +33,6 @@
     text-align: center;
     /* font-size: 0; */
   }
-
-  /* #btn {
-    bottom of page in the center
-  } */
 
   /* Old CSS */
 
