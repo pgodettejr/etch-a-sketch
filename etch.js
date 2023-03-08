@@ -1,4 +1,5 @@
 const container = document.getElementById("container");
+const button = document.getElementById("btn");
 
 function makeRows(rows, cols) {
   container.style.setProperty('--grid-rows', rows);
@@ -12,30 +13,23 @@ function makeRows(rows, cols) {
   };  
 };
 
+button.addEventListener('click', function() {
+  let newGrid = Number(prompt("Enter the number of squares per side for the new grid: "));
+  
+  if(newGrid >= 1 && newGrid <= 100) {
+    container.innerHTML = "";
+    makeRows(newGrid, newGrid);
+  } else {
+    alert("Please enter a number between 1 and 100");
+  }
+
+});
+
 makeRows(16, 16);
 
 // Learn CSS grid?
 
 // The Mouse Trailer with Smart Features (Hyperplexed)?
-
-// Button Starting Point
-
-const btn = document.querySelector('#btn');
-
-btn.addEventListener('click', function(input) {
-  const gridBox = makeRows();  
-  let popup = Number(prompt("Enter the number of squares you'd like", ""));
-
-  if(input.value < 1) {
-    input.value = 1;
-    return gridBox
-  } else if(input.value > 100) {
-    input.value = 100;
-    return gridBox
-  } else {
-    return gridBox
-  }
-});
 
 /* Need either a separate function, possibly with a for loop, to create the hover
 effect or code within the existing makeRows function to make it work (might need to 
@@ -91,6 +85,26 @@ mouse click fast enough.
 
 container.addEventListener ('mousedown', makeRows => {
     makeRows.target.style.background = 'black';
+});
+
+Old button code that did create a button but wouldn't reset grid and put all boxes 
+under one long column
+
+const btn = document.querySelector('#btn');
+
+btn.addEventListener('click', function(input) {
+  const gridBox = makeRows();  
+  let popup = Number(prompt("Enter the number of squares you'd like", ""));
+
+  if(input.value < 1) {
+    input.value = 1;
+    return gridBox
+  } else if(input.value > 100) {
+    input.value = 100;
+    return gridBox
+  } else {
+    return gridBox
+  }
 }); */
 
 /* Really bad code that I would've needed 256 more divs to work. Also it crashes.

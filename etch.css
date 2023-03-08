@@ -22,9 +22,11 @@
     grid-gap: 0.25em;
     grid-template-rows: repeat(var(--grid-rows), 1fr);
     grid-template-columns: repeat(var(--grid-cols), 1fr);
-    width: 75%;
-    height: 75%;
+    /* width: 75%;
+    height: 75%; */
+    max-height: 960px;
     max-width: 960px;
+    /* margin: 0 auto; */
   }
 
   .grid-item {
