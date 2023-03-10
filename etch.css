@@ -12,28 +12,24 @@
   }
 
   #btn {
-    margin: 75px;
-    padding: 15px 45px 15px;
-    font-size: 48px;
+    margin: 15px;
+    padding: 10px 30px 10px;
+    font-size: 36px;
   }
 
   #container {
     display: grid;
-    grid-gap: 0.25em;
+    grid-gap: 0.1em;
     grid-template-rows: repeat(var(--grid-rows), 1fr);
     grid-template-columns: repeat(var(--grid-cols), 1fr);
-    /* width: 75%;
-    height: 75%; */
-    max-height: 960px;
     max-width: 960px;
-    /* margin: 0 auto; */
   }
 
   .grid-item {
-    padding: 1.5em;
     border: 1px solid #ddd;
     text-align: center;
-    /* font-size: 0; */
+    width: 10px;
+    height: 10px;
   }
 
   /* Old CSS */

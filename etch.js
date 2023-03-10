@@ -1,6 +1,7 @@
 const container = document.getElementById("container");
 const button = document.getElementById("btn");
 
+// Creates grid
 function makeRows(rows, cols) {
   container.style.setProperty('--grid-rows', rows);
   container.style.setProperty('--grid-cols', cols);
@@ -13,23 +14,20 @@ function makeRows(rows, cols) {
   };  
 };
 
+// Clears current grid & creates new grid of any size up to 80 x 80
 button.addEventListener('click', function() {
   let newGrid = Number(prompt("Enter the number of squares per side for the new grid: "));
-  
-  if(newGrid >= 1 && newGrid <= 100) {
+
+  if(newGrid >= 1 && newGrid <= 80) {
     container.innerHTML = "";
     makeRows(newGrid, newGrid);
   } else {
-    alert("Please enter a number between 1 and 100");
+    alert("Please enter a number between 1 and 80");
   }
 
 });
 
 makeRows(16, 16);
-
-// Learn CSS grid?
-
-// The Mouse Trailer with Smart Features (Hyperplexed)?
 
 /* Need either a separate function, possibly with a for loop, to create the hover
 effect or code within the existing makeRows function to make it work (might need to 
